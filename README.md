@@ -9,6 +9,6 @@ NDHU Multimedia System - Assignment 0: Setting up GitHub
 2. Numbered item 2
 3. Numbered item 3
 
-![alt text][logo]
+![alt text](http://www.ndhu.edu.tw/ezfiles/0/1000/img/2214/20170927_A.jpg "Logo Title Text 2")
 [logo]: http://www.ndhu.edu.tw/ezfiles/0/1000/img/2214/20170927_A.jpg "Logo Title Text 2"
 
