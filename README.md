@@ -11,8 +11,8 @@ NDHU Multimedia System - Assignment 0: Setting up GitHub
 
 ![alt text](http://www.ndhu.edu.tw/ezfiles/0/1000/img/2214/20170927_A.jpg "NDHU")
 
-Time|Price|MA30
----|---|---
-090000|10000|0
-090005|10004|0
-090010|10012|0
+Time  |Price  |MA30 
+------|-------|----
+090000| 10000 |   0
+090005| 10004 |   0
+090010| 10012 |   0
