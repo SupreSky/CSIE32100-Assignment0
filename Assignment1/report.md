@@ -93,8 +93,8 @@ for (int i = 0; i < img.rows; i++)
 imshow("Grey", img);
 imshow("Algo1", copy1);
 imshow("Algo2", copy2);
-imwrite("Grey_Algo1.png", copy1);
-imwrite("Grey_Algo2.png", copy2);
+imwrite("Grey_Algo1.png", copy1);	// 儲存演算法一的圖片
+imwrite("Grey_Algo2.png", copy2);	// 儲存演算法二的圖片
 ```
 
 # 心得
