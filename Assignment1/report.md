@@ -10,14 +10,19 @@
 
 * Code 的核心部分
 ```C++
+	Mat img;
+	img = imread("X.png", 1);			// 讀入原始 iPhone X
+	namedWindow("Color", WINDOW_AUTOSIZE);		// 原始圖片放的視窗
+	namedWindow("Grey", WINDOW_AUTOSIZE);		// 灰階圖片要放的視窗
 
+	Mat copy(img.rows, img.cols, CV_8UC1);
 	for (int i = 0; i < img.rows; i++)
 		for (int j = 0; j < img.cols; j++)
 			copy.at<uchar>(i, j) = (uchar)((img.at<Vec3b>(i, j)[0] + img.at<Vec3b>(i, j)[1] + img.at<Vec3b>(i, j)[2]) / 3);
 
-	imshow("Color", img);
-	imshow("Grey", copy);
-	imwrite("GreyX.png", copy);
+	imshow("Color", img);		// 原始 iPhone X
+	imshow("Grey", copy);		// 轉換之後的灰階 iPhone X
+	imwrite("GreyX.png", copy);	// 儲存灰階 iPhone X
 	waitKey(0);
 	return 0;
 ```
