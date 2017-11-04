@@ -8,6 +8,20 @@
 
 ![alt text](https://github.com/SupreSky/MMS2017FALL/blob/master/Assignment1/Application1/Application1/GreyX.png "Gray iPhone X")
 
+* Code 的核心部分
+```C++
+
+	for (int i = 0; i < img.rows; i++)
+		for (int j = 0; j < img.cols; j++)
+			copy.at<uchar>(i, j) = (uchar)((img.at<Vec3b>(i, j)[0] + img.at<Vec3b>(i, j)[1] + img.at<Vec3b>(i, j)[2]) / 3);
+
+	imshow("Color", img);
+	imshow("Grey", copy);
+	imwrite("GreyX.png", copy);
+	waitKey(0);
+	return 0;
+```
+
 # Dithering Algorithm Gray Level
 
 * 原始圖片依然是 iPhone X
@@ -21,3 +35,6 @@
 * 使用第二個演算法轉換之後的 iPhone X 圖片
 
 ![alt text](https://github.com/SupreSky/MMS2017FALL/blob/master/Assignment1/Application1-2/Application1-2/Grey_Algo2.png "Algo2 iPhone X")
+
+# 心得
+這份作業並不困難，最難的部分我想應該是安裝環境的部分，VStudio和裡面的路徑設定花了我很多時間。雖然這份報告快要完成了，我依然需要在網路上找 Markdown 的用法，不過也因為這次的練習而更加熟練了。這次作業最有趣的地方反而是這邊，因為 Markdown 還有很多用法比如說 Horizontal Rule 和 Syntax Highlighting，可以讓原本的純文字變得易讀又生動。
