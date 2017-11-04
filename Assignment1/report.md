@@ -44,7 +44,7 @@
 * Code 的核心部分
 
 ```C++
-Mat copy1;
+Mat copy1;	// 演算法 1
 copy1.create(img.rows * 2, img.cols * 2, CV_8U);
 for (int i = 0; i < img.rows; i++)
 	for (int j = 0; j < img.cols; j++) {
@@ -79,7 +79,7 @@ for (int i = 0; i < img.rows; i++)
 			copy1.at<uchar>(i * 2 + 1, j * 2 + 1) = 0;
 		}
 }
-Mat copy2;
+Mat copy2;	// 演算法 2
 copy2.create(img.rows * 4, img.cols * 4, CV_8U);
 for (int i = 0; i < img.rows; i++)
 	for (int j = 0; j < img.cols; j++)
