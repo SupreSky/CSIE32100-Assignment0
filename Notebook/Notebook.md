@@ -8,7 +8,7 @@
   + 資訊量
   + 單位：bits(base-2), hartley(base-10), nats(base-e)
   + Random Varible S Pr(S=U)
-  + ![EQ](http://www.sciweavers.org/tex2img.php?eq=%20-log_%7Bn%7DPr%28S%3DU%29%20%20%3D%20log_%7Bn%7D%20%5Cfrac%7B1%7D%7BPr%28S%3DU%29%7D%20&bc=White&fc=Black&im=png&fs=12&ff=cmbright&edit=0)
+  - ![EQ1](http://www.sciweavers.org/tex2img.php?eq=%20-log_%7Bn%7DPr%28S%3DU%29%20%20%3D%20log_%7Bn%7D%20%5Cfrac%7B1%7D%7BPr%28S%3DU%29%7D%20&bc=White&fc=Black&im=png&fs=12&ff=cmbright&edit=0)
 
 
 # Huffman Coding
