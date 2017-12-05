@@ -1,5 +1,5 @@
 ## Lossless Compression
-  D -> Compression Algorithm -> DepressionAlgorithm -> D
+  + D -> Compression Algorithm -> DepressionAlgorithm -> D
 
 ## Lossy Compression
   + Compression Ratio = ![EQ](http://rogercortesi.com/eqn/tempimagedir/eqn4641.png)
