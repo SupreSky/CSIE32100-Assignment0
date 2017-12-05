@@ -7,8 +7,8 @@
 # Self-Information
   + 資訊量
   + 單位：bits(base-2), hartley(base-10), nats(base-e)
-  + Random Varible S Pr(S=U)
-  - ![EQ1](http://www.sciweavers.org/tex2img.php?eq=%20-log_%7Bn%7DPr%28S%3DU%29%20%20%3D%20log_%7Bn%7D%20%5Cfrac%7B1%7D%7BPr%28S%3DU%29%7D%20&bc=White&fc=Black&im=png&fs=12&ff=cmbright&edit=0)
+  + Random Varible S ![EQ2](http://rogercortesi.com/eqn/tempimagedir/eqn6738.png)
+  + 機率均等時：![EQ3](http://rogercortesi.com/eqn/tempimagedir/eqn1666.png)
 
 
 # Huffman Coding
@@ -24,3 +24,6 @@
 # Extended Huffman Coding
 + Symbol Set S = { v1, v2, ..., vn }
 + Extended Symbol Set
+
+# Information Entropy (Shanon Entropy)
++ 機率不等時：![EQ4](http://rogercortesi.com/eqn/tempimagedir/eqn4680.png)
