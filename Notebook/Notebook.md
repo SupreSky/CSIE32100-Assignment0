@@ -22,8 +22,17 @@
 |	    	|10		  |110  	|0  		|111  	|
 
 ## Extended Huffman Coding
-+ Symbol Set S = { v1, v2, ..., vn }
-+ Extended Symbol Set
+  + Symbol Set S = { v1, v2, ..., vn }
+  + Extended Symbol Set
 
 ## Information Entropy (Shanon Entropy)
-+ 機率不等時：![EQ4](http://rogercortesi.com/eqn/tempimagedir/eqn4680.png)
+  + 機率不等時：![EQ4](http://rogercortesi.com/eqn/tempimagedir/eqn4680.png)
+
+## Entropy Coding
+  + Assigns Codes (0/1 bits) to symbols so as to match code lengths with the probabilities of the symbol.
+
+## Lossless Coding Methods
+  + Run-Length Coding
+  + Huffman Coding  同長度符號　不同長度碼
+  + LZW Coding     不同長度符號  同長度碼
+  + Arithmetic Coding
