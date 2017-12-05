@@ -2,7 +2,7 @@
   D -> Compression Algorithm -> DepressionAlgorithm -> D
 
 ## Lossy Compression
-  + Compression Ratio = ![EQ](http://www.sciweavers.org/tex2img.php?eq=%5Cfrac%7Bsize%28D%29%7D%7Bsize%28B%29%7D%20&bc=White&fc=Black&im=png&fs=12&ff=cmbright&edit=0)
+  + Compression Ratio = ![EQ](http://rogercortesi.com/eqn/tempimagedir/eqn4641.png)
 
 ## Self-Information
   + 資訊量
