@@ -34,5 +34,5 @@
 ## Lossless Coding Methods
   + Run-Length Coding
   + Huffman Coding  同長度符號　不同長度碼
-  + LZW Coding     不同長度符號  同長度碼
+  + LZW Coding     不同長度符號   同長度碼
   + Arithmetic Coding
