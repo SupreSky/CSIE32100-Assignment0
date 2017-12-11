@@ -46,3 +46,11 @@ def note4(num):
         freq = 10**9
         print ("ERROR!!")
     return freq
+
+f0 = open("twinckle.txt")
+sheet = f0.read()
+f = wave.open(r"Song.wav", "wb")
+
+f.setnchannels(1)
+f.setsampwidth(2)
+f.setframerate(framerate)
