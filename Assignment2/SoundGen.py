@@ -17,19 +17,20 @@ def zeroPhase():
     f.writeframes(X.tostring())
 
 def note2(num):
-    if int(num) == 1:
+    num = int(num)
+    if num == 1:
         freq = 65
-    elif int(num) == 2:
+    elif num == 2:
         freq = 73
-    elif int(num) == 3:
+    elif num == 3:
         freq = 82
-    elif int(num) == 4:
+    elif num == 4:
         freq = 87
-    elif int(num) == 5:
+    elif num == 5:
         freq = 98
-    elif int(num) == 6:
+    elif num == 6:
         freq = 110
-    elif int(num) == 7:
+    elif num == 7:
         freq = 124
     else:
         freq = 10**9
@@ -37,31 +38,41 @@ def note2(num):
     return freq
 
 def note4(num):
-    if int(num) == 1:
+    num = int(num)
+    if num == 1:
         freq = 262
-    elif int(num) == 2:
+    elif num == 2:
         freq = 294
-    elif int(num) == 3:
+    elif num == 3:
         freq = 330
-    elif int(num) == 4:
+    elif num == 4:
         freq = 349
-    elif int(num) == 5:
+    elif num == 5:
         freq = 393
-    elif int(num) == 6:
+    elif num == 6:
         freq = 440
-    elif int(num) == 7:
+    elif num == 7:
         freq = 494
     else:
         freq = 10**9
         print ("ERROR!!")
     return freq
 
+def songList(num):
+    num = int(num)
+    if num == 1:
+        songFile = "twinckle.txt"
+    elif num == 2:
+        songFile = "Not Good Enough For You.txt"
+    else:
+        print("songList ERROR!!")
+    return songFile
+
 print("歌曲清單：")
 print("[1] Twinckle Twinckle little star")
 print("[2] 周杰倫 - 我不配")
 
-fileName = input()
-f0 = open(fileName)
+f0 = open(songList(input()))
 ##f0 = open("twinckle.txt")
 ##f0 = open("Not Good Enough For You.txt")
 sheet = f0.read()
