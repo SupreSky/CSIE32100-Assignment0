@@ -50,7 +50,8 @@ def note4(num):
         print ("ERROR!!")
     return freq
 
-f0 = open("twinckle.txt")
+##f0 = open("twinckle.txt")
+f0 = open("Not Good Enough For You.txt")
 sheet = f0.read()
 f = wave.open(r"Song.wav", "wb")
 
@@ -58,7 +59,7 @@ f.setnchannels(1)
 f.setsampwidth(2)
 f.setframerate(framerate)
 
-for i in range(0, 47):
+for i in range(0, len(sheet)):
     if sheet[i] == "-":
         continue
     
@@ -80,4 +81,4 @@ for i in range(0, 47):
 
 
 f.close()
-sheet.close()
+f0.close()
