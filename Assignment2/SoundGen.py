@@ -1,6 +1,9 @@
 import wave
 import numpy as np
 
+time = 0.5 # second
+framerate = 44000 # Hz
+
 def sinPhase(f, framerate, time):
     nframes = time * framerate
     t = np.linspace(0, time, num=nframes)
@@ -56,11 +59,18 @@ f.setsampwidth(2)
 f.setframerate(framerate)
 
 for i in range(0, 47):
-    sinus_f_sweep = sinSweepFrq(note2(sheet[i]),  framerate, time)
+    if sheet[i] == "-":
+        continue
+    
+    nowDuration = time
+    if sheet[i+1] == "-":
+        nowDuration = time * 2
+    
+    sinus_f_sweep = sinPhase(note2(sheet[i]),  framerate, nowDuration)
     wave_data = sinus_f_sweep * 10000 / 2
     wave_data = wave_data.astype(np.short)
     
-    sinus_f_sweep2 = sinSweepFrq(note4(sheet[i]),  framerate, time)
+    sinus_f_sweep2 = sinPhase(note4(sheet[i]),  framerate, nowDuration)
     wave_data2 = sinus_f_sweep2 * 10000 / 2
     wave_data2 = wave_data2.astype(np.short)
     
