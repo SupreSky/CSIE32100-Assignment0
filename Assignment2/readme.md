@@ -8,7 +8,12 @@
 ## 流程圖
 
 ## 如何使用
-
+### 第一部分 SoundGen.py 使用方法
++ 前往 SoundGen.py 所在目錄
++ 在命令列輸入 
+```Bash
+python SoundGen.py
+```
 ## 成果圖
 
 ## 遇到的問題
