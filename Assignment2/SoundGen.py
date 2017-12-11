@@ -54,3 +54,20 @@ f = wave.open(r"Song.wav", "wb")
 f.setnchannels(1)
 f.setsampwidth(2)
 f.setframerate(framerate)
+
+for i in range(0, 47):
+    sinus_f_sweep = sinSweepFrq(note2(sheet[i]),  framerate, time)
+    wave_data = sinus_f_sweep * 10000 / 2
+    wave_data = wave_data.astype(np.short)
+    
+    sinus_f_sweep2 = sinSweepFrq(note4(sheet[i]),  framerate, time)
+    wave_data2 = sinus_f_sweep2 * 10000 / 2
+    wave_data2 = wave_data2.astype(np.short)
+    
+    ADD = wave_data + wave_data2
+    
+    f.writeframes(ADD.tostring())
+
+
+f.close()
+sheet.close()
