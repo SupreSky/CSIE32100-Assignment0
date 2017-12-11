@@ -2,20 +2,20 @@ import wave
 import numpy as np
 import waveProc as wProc
 
-print("歌曲清單：")
-print("[1] Twinckle Twinckle little star")
-print("[2] 周杰倫 - 我不配")
-
-def cosPhase(f, framerate, time):
+def cosPhase(f, framerate, time, modulation):
     nframes = time * framerate
     t = np.linspace(0, time, num=nframes)
     
     phase = 2 * np.pi * f * t
-    ans = np.sin(phase) * np.cos( 2 * np.pi * 200 * t)
+    ans = np.sin(phase) * np.cos( 2 * np.pi * modulation * t)
     return ans
 
+print("歌曲清單：")
+print("[1] Twinckle Twinckle little star")
+print("[2] 周杰倫 - 我不配")
 
 f0 = open(wProc.songList(input()))
+modulation = int(input("請輸入 f，f = 100, 500, 800："))
 ##f0 = open("twinckle.txt")
 ##f0 = open("Not Good Enough For You.txt")
 sheet = f0.read()
@@ -32,11 +32,11 @@ for i in range(0, len(sheet)):
     if i < len(sheet)-1 and sheet[i+1] == "-" :
         nowDuration = wProc.time * 2
     
-    wave_data = cosPhase(wProc.note2(sheet[i]),  wProc.framerate, nowDuration)
+    wave_data = cosPhase(wProc.note2(sheet[i]),  wProc.framerate, nowDuration, modulation)
     wave_data = wave_data * 10000 / 2
     wave_data = wave_data.astype(np.short)
     
-    wave_data2 = cosPhase(wProc.note4(sheet[i]),  wProc.framerate, nowDuration)
+    wave_data2 = cosPhase(wProc.note4(sheet[i]),  wProc.framerate, nowDuration, modulation)
     wave_data2 = wave_data2 * 10000 / 2
     wave_data2 = wave_data2.astype(np.short)
     
