@@ -1,7 +1,7 @@
 import wave
 import numpy as np
 
-time = 0.5 # second
+time = 0.275 # second
 framerate = 44000 # Hz
 
 def sinPhase(f, framerate, time):
@@ -9,6 +9,12 @@ def sinPhase(f, framerate, time):
     t = np.linspace(0, time, num=nframes)
     phase = 2 * np.pi * f * t
     return np.sin(phase)
+
+def zeroPhase():
+    X = sinPhase(1, framerate, 0.025)
+    X = X * 10000 / 2
+    X = X.astype(np.short)
+    f.writeframes(X.tostring())
 
 def note2(num):
     if int(num) == 1:
@@ -50,8 +56,14 @@ def note4(num):
         print ("ERROR!!")
     return freq
 
+print("歌曲清單：")
+print("[1] Twinckle Twinckle little star")
+print("[2] 周杰倫 - 我不配")
+
+fileName = input()
+f0 = open(fileName)
 ##f0 = open("twinckle.txt")
-f0 = open("Not Good Enough For You.txt")
+##f0 = open("Not Good Enough For You.txt")
 sheet = f0.read()
 f = wave.open(r"Song.wav", "wb")
 
@@ -62,10 +74,10 @@ f.setframerate(framerate)
 for i in range(0, len(sheet)):
     if sheet[i] == "-":
         continue
-    
     nowDuration = time
-    if sheet[i+1] == "-":
+    if i < len(sheet)-1 and sheet[i+1] == "-" :
         nowDuration = time * 2
+        
     
     sinus_f_sweep = sinPhase(note2(sheet[i]),  framerate, nowDuration)
     wave_data = sinus_f_sweep * 10000 / 2
@@ -78,6 +90,9 @@ for i in range(0, len(sheet)):
     ADD = wave_data + wave_data2
     
     f.writeframes(ADD.tostring())
+    
+    if i < len(sheet)-1 and sheet[i+1] == sheet[i]:
+        zeroPhase()
 
 
 f.close()
