@@ -10,7 +10,7 @@ f0 = open(wProc.songList(input()))
 ##f0 = open("twinckle.txt")
 ##f0 = open("Not Good Enough For You.txt")
 sheet = f0.read()
-f = wave.open(r"Song.wav", "wb")
+f = wave.open(r"Gen.wav", "wb")
 
 f.setnchannels(1)
 f.setsampwidth(2)
