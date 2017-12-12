@@ -10,7 +10,7 @@ def sinPhase(f, framerate, time):
     return np.sin(phase)
 
 def zeroPhase():
-    X = sinPhase(1, framerate, 0.025)
+    X = sinPhase(1, framerate, 0.0275)
     X = X * 10000 / 2
     X = X.astype(np.short)
     return X
