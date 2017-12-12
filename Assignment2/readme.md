@@ -32,6 +32,7 @@ python SoundMod.py
 + 最後就會在同目錄下產生 Mod.wav
 
 ## 成果圖
+![Playing](/Assignment2/images/SoundPlaying.png)
 
 ## 遇到的問題
 
