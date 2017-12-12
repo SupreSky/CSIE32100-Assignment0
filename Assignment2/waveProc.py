@@ -1,7 +1,7 @@
 import numpy as np
 
 time = 0.275 # second
-framerate = 44000 # Hz
+framerate = 44100 # Hz
 
 def sinPhase(f, framerate, time):
     nframes = time * framerate
