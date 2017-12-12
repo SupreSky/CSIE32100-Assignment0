@@ -9,7 +9,7 @@
 ### 第一部分 SoundGen 流程圖
 ![SGflow](/Assignment2/images/SGFlowChart.png)
 ### 第二部分 SoundMod 流程圖
-![SMflow](MMS2017FALL/Assignment2/images/SMFlowChart.png)
+![SMflow](/images/SMFlowChart.png)
 
 ## 如何使用
 ### 第一部分 SoundGen.py 使用方法
