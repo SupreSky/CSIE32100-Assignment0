@@ -8,15 +8,15 @@ P = 31
 
 img = cv2.imread("../Assignment3/images/i1.pgm", 0)
 img2 = cv2.imread("../Assignment3/images/i2.pgm", 0)
-img3 = np.zeros((img.shape[0], img.shape[1]))
+img3 = img
 
 
 def MAD(x, y, i, j):
     dSum = 0
 #    cK = -8
 #    cL = -8
-    for k, cK in zip(range(i-8, i+8), range(-8, 7)):
-        for l, cL in zip(range(j-8, j+8), range(-8, 7)):
+    for k in range(i-8, i+8):
+        for l in range(j-8, j+8):
 #            if x == 8 and y == 312 and i == 0 and j == 313:
 #                print(x, y, i, j, k, l)
             C = img2[x+k-i,y+l-j]
@@ -44,8 +44,10 @@ def seq_search():
                         u = i
                         v = j
             
-            for a, cA in zip(range(u-8, u+8), range(-8, 7)):
-                for b, cB in zip(range(v-8, v+8), range(-8, 7)):
+#            for a, cA in zip(range(u-8, u+8), range(-8, 7)):
+#                for b, cB in zip(range(v-8, v+8), range(-8, 7)):
+            for a in range(u-8, u+8):
+                for b in range(v-8, v+8):
                     img3[x+a-u, y+b-v] = img[a,b]
             
 #            print(x*100/img.shape[0], y*100/img.shape[1])
@@ -56,8 +58,9 @@ timeEnd = time.time()
 print("Time: ")
 print(timeEnd-timeStart)
                     
+print(img3)
 
-cv2.imwrite("i2p.pgm", img3)
+cv2.imwrite("/images/i2p.pgm", img3)
                 
 
 #cv2.imshow('image1',img)
