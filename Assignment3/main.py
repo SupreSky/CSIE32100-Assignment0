@@ -15,8 +15,8 @@ def MAD(x, y, i, j):
     dSum = 0
 #    cK = -8
 #    cL = -8
-    for k in range(i-8, i+8):
-        for l in range(j-8, j+8):
+    for k, cK in zip(range(i-8, i+8), range(-8, 7)):
+        for l, cL in zip(range(j-8, j+8), range(-8, 7)):
 #            if x == 8 and y == 312 and i == 0 and j == 313:
 #                print(x, y, i, j, k, l)
             C = img2[x+k-i,y+l-j]
@@ -44,8 +44,8 @@ def seq_search():
                         u = i
                         v = j
             
-            for a in range(u-8, u+8):
-                for b in range(v-8, v+8):
+            for a, cA in zip(range(u-8, u+8), range(-8, 7)):
+                for b, cB in zip(range(v-8, v+8), range(-8, 7)):
                     img3[x+a-u, y+b-v] = img[a,b]
             
 #            print(x*100/img.shape[0], y*100/img.shape[1])
@@ -54,7 +54,7 @@ timeStart = time.time()
 seq_search()
 timeEnd = time.time()
 print("Time: ")
-print(timeStart-timeEnd)
+print(timeEnd-timeStart)
                     
 
 cv2.imwrite("i2p.pgm", img3)
