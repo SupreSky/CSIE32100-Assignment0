@@ -2,15 +2,10 @@ import cv2
 import time
 import numpy as np
 
-
-
-P = 31
-
 img = cv2.imread("../Assignment3/images/i1.pgm", 0)
 img2 = cv2.imread("../Assignment3/images/i2.pgm", 0)
 img3 = np.copy(img)
-#img4 = np.copy(img)
-img4 = np.zeros((img.shape[0], img.shape[1]))
+img4 = np.copy(img)
 
 
 def MAD_1(x, y, i, j):
@@ -55,9 +50,6 @@ def seq_search():
                         minMAD = curMAD
                         u = i
                         v = j
-            
-#            for a, cA in zip(range(u-8, u+8), range(-8, 7)):
-#                for b, cB in zip(range(v-8, v+8), range(-8, 7)):
             for a in range(u-8, u+8):
                 for b in range(v-8, v+8):
                     img3[x+a-u, y+b-v] = img[a,b]
@@ -85,16 +77,15 @@ def twoD_search():
             
             for a in range(k-8, k+8):
                 for b in range(l-8, l+8):
-#                    print(a,b)
                     if a >= img.shape[0] or b >= img.shape[1]:
                         continue
-                    img4[a-k, b-l] = img[a, b]
+                    img4[x+a-k, y+b-l] = img[a, b]
                 
                 
                 
                     
 timeStart = time.time()
-#seq_search()
+seq_search()
 timeEnd = time.time()
 print("Seq Time: ")
 print(timeEnd-timeStart)
@@ -113,6 +104,5 @@ cv2.imwrite("../Assignment3/images/i2p_2D.pgm", img4)
 #cv2.imshow('image2',img2)
 cv2.imshow('image3',img3)
 cv2.imshow('image4',img4)
-#cv2.imshow('image3',cv2.absdiff(img, img2))
 cv2.waitKey(0)
 cv2.destroyAllWindows()
