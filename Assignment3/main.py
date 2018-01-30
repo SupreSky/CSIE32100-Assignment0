@@ -41,7 +41,6 @@ def SNR(f1, f2):
         for y in range(img.shape[1]):
             A = int (f1[x, y])
             B = int (f2[x, y])
-            print ( Up, Down )
             Up = Up + (B ** 2)
             Down = Down + ( ( A - B ) ** 2 )
     
@@ -114,7 +113,7 @@ print(seq_snr)
 timeStart = time.time()
 twoD_search()
 timeEnd = time.time()
-#twoD_snr = SNR(img4, img)
+twoD_snr = SNR(img4, img)
 print("2D Time: ")
 print(timeEnd-timeStart)
 print("2D SNR: ")
