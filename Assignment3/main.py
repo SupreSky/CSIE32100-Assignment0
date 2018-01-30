@@ -39,10 +39,11 @@ def SNR(f1, f2):
     Down = 0
     for x in range(img.shape[0]):
         for y in range(img.shape[1]):
-            if Down > 10 :
-                print ( Up, Down )
-            Up = Up + (f2[x, y] ** 2 )
-            Down = Down + ( ( f1[x, y] - f2[x, y] ) ** 2 )
+            A = int (f1[x, y])
+            B = int (f2[x, y])
+            print ( Up, Down )
+            Up = Up + (B ** 2)
+            Down = Down + ( ( A - B ) ** 2 )
     
     ans = Up / Down
     return ans
